@@ -1,163 +1,184 @@
-html{
-	font-size: 20px;
+html {
+  font-size: 20px;
 }
-body{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: sans-serif;
-	height: 100%;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .chatBox {
-	width: 90vw;
-	height: 80vh;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	overflow: hidden;
-	border-radius: 2vw;
-	box-shadow: 0 0 26px 1px rgba(0,0,0,.4);
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2vw;
+  box-shadow: 0 0 26px 1px rgba(0, 0, 0, 0.4);
 }
-.chatBox .chatRoom{
-	display: none;
-	height: 100%;
-	width: 100%;
+.chatBox .chatRoom {
+  display: none;
+  height: 100%;
+  width: 100%;
 }
-.chatBox .chatMessages{
-	width: 100%;
-	max-height: 100%;
-	position: absolute;
-	bottom: calc(10vh + 25px);
-	overflow-Y: auto;
-	overflow-x: hidden;
-	scroll-behavior: smooth;
+.chatBox .chatMessages {
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  bottom: calc(10vh + 25px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-.chatBox .inputName{
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	align-items: center;
-	justify-content: space-around;
-	height: 15%;
+.chatBox .inputName {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: space-around;
+  height: 15%;
 }
-.chatBox .inputName input{
-	 border-bottom: 2px solid grey;
-	 font-weight: bolder;
-	 font-size: .75rem;
-	 padding-left: 5px;
-	 max-width: 70%;
-	 text-align: center;
+.chatBox .inputName input {
+  border-bottom: 2px solid grey;
+  font-weight: bolder;
+  font-size: 0.75rem;
+  padding-left: 5px;
+  max-width: 70%;
+  text-align: center;
 }
-.chatBox .inputName button{
-	align-self: center;
+.chatBox .inputName button {
+  align-self: center;
 }
-.chatBox form{
-	height: auto;
-	background:grey;
-	display: flex;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	padding:5px;
-	justify-content: flex-end;
-	align-content:flex-end;
+.chatBox form {
+  height: auto;
+  background: grey;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  justify-content: flex-end;
+  align-content: flex-end;
 }
 
-.chatBox input, .chatBox #chatText{
-	border:none;
-	outline: none;
+.chatBox input,
+.chatBox #chatText {
+  border: none;
+  outline: none;
 }
-.chatBox form #chatText{
-	border-radius: 1rem;
-	padding: 5px 10px;
-	font-size: .75rem;
-	max-height: 10vh;
-	width: 30%;
-	overflow: scroll;
-	position: relative;
-	color: rgb(234,0,255);
-	-webkit-text-fill-color: black;
-	text-fill-color: black;
-	transition: width .3s ease;
-	background: white;
+.chatBox form #chatText {
+  border-radius: 1rem;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  max-height: 10vh;
+  width: 30%;
+  overflow: scroll;
+  position: relative;
+  color: rgb(234, 0, 255);
+  -webkit-text-fill-color: black;
+  text-emphasis-color: black;
+  transition: width 0.3s ease;
+  background: white;
 }
-.chatBox form a{
-	position: absolute;
-	display: none;
+.chatBox form a {
+  position: absolute;
+  display: none;
 }
-.chatBox form #chatText:empty::before{
-	content: attr(data-placeholder);
-	position: absolute;
-	left: 5%;
-	top: 50%;
-	transform: translateY(-50%);
+.chatBox form #chatText:empty::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 }
-#chatText::-webkit-scrollbar{
-	display: none;
+#chatText::-webkit-scrollbar {
+  display: none;
 }
-.chatMessages::-webkit-scrollbar{
-	display: none;
+.chatMessages::-webkit-scrollbar {
+  display: none;
 }
-.chatMessages::-moz-scrollbar{
-	display: none;
+.chatMessages::-moz-scrollbar {
+  display: none;
 }
-.chatBox form input[name=submit],.chatBox form button{
-	font-weight: bolder;
-	background: grey;
-	color: white;
-	cursor: pointer;
-	font-size: 1rem;
-	border: none;
-	align-self: flex-end;
+.chatBox form input[name="submit"],
+.chatBox form button {
+  font-weight: bolder;
+  background: grey;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  align-self: flex-end;
 }
-.chatBox .message{
-	background: lightgrey;
-	word-wrap: break-word;
-	max-width: 45%;
-	border-radius: 2vw;
-	padding:3px;
-	margin: 1vw;
-	clear: both;
-	display: block;
-	animation: animate .2s ease;
+.chatBox .message {
+  background: lightgrey;
+  word-wrap: break-word;
+  max-width: 45%;
+  border-radius: 2vw;
+  padding: 3px;
+  margin: 1vw;
+  clear: both;
+  display: block;
+  cursor: pointer;
+  animation: animate 0.2s ease;
+  padding: 0.35rem 0.5rem;
 }
 @-webkit-keyframes animate {
-	from {transform:scaleY(0);  }
-	to {transform: scale(1);  }
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 @-o-keyframes animate {
-	from {transform:scaleY(0);  }
-	to {transform: scale(1);  }
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 @-moz-keyframes animate {
-	from {transform:scaleY(0);  }
-	to {transform: scale(1);  }
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 @keyframes animate {
-	from {transform:scaleY(0); transform-origin:bottom; }
-	to {transform: scale(1);  }
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scale(1);
+  }
 }
-.chatBox .message.deleted{
-	box-shadow: 0 0 1px 1px #d92424;
-	font-size: .50rem;
-	pointer-events: none;
+.chatBox .message.deleted {
+  box-shadow: 0 0 1px 1px #d92424;
+  font-size: 0.5rem;
+  pointer-events: none;
 }
-.chatBox .message:nth-child(odd){
-	float: left;
+.chatBox .message:nth-child(odd) {
+  float: left;
 }
-.chatBox .message:nth-child(even){
-	background-color:grey;
-	color: white;
-	text-align: justify;
-	margin-left: auto;
-	float: right;
-	border-radius: 2vw;
+.chatBox .message:nth-child(even) {
+  background-color: grey;
+  color: white;
+  text-align: justify;
+  margin-left: auto;
+  float: right;
+  border-radius: 2vw;
 }
